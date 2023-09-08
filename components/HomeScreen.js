@@ -2,19 +2,21 @@ import { View, Text, StyleSheet,Button,Image} from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Zocial'
 
-
 const HomeScreen = ({navigation}) => {
 
   return (
+
     <View  style={style.backGround}>
 
       <Icon name='github' size={30} style={style.githIcon}/>
 
+    {/*Imagen de sisco de inicio*/}
       <View style={style.contenedorIMG}>
         <Image style={style.imagenCisco}
         source={require('../assets/img/CiscoLogo.png')}/>
       </View>
 
+    {/*Texto de pantalla de inicio*/}
       <View style={style.contenedorItem}>
         <Text style={style.text}>Scripts De Comandos De Cisco Paket Tracer</Text>
         <View style={style.contenDispositivo}>
@@ -72,7 +74,7 @@ const style=StyleSheet.create({
       backgroundColor:'#fff',
       alignItems:'center',
       justifyContent:'center',
-      borderRadius:10,
+      borderRadius:7,
       marginTop:15
     },
     textDispositivo:{

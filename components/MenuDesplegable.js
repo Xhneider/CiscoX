@@ -5,16 +5,21 @@ import {
   Animated,
   TouchableWithoutFeedback,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
+import ItemsMenu from './ItemMenu';
+import { Contexto } from './ContextoApp';
 
 const MenuDesplegable = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+  {/* uso del contexto para controlar el hidden del menu */}
+  const {hidden}=useContext(Contexto)
+  const {setHidden}=useContext(Contexto)
   const [largo, setLargo] = useState(new Animated.Value(10));
 
   const pressMenu = () => {
-    setIsOpen(!isOpen);
+    setHidden(!hidden);
     Animated.timing(largo, {
-      toValue: isOpen ? 10 : 300,
+      toValue: hidden ? 10 : 300,
       duration: 100,
       useNativeDriver: false,
     }).start();
@@ -24,6 +29,7 @@ const MenuDesplegable = () => {
     <TouchableWithoutFeedback onPress={pressMenu}>
       <View style={style.margenDeToque}>
         <Animated.View style={[style.menuDespleagble, {width: largo}]} />
+        <ItemsMenu/>
       </View>
     </TouchableWithoutFeedback>
   );

@@ -4,11 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './components/HomeScreen';
 import ComanDataScreen from './components/ComanDataScreen';
 import MenuDesplegable from './components/MenuDesplegable';
+import { Datos } from './components/ContextoApp.js'
 
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
-    <>
+  <Datos>
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Home"
@@ -20,7 +21,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     <MenuDesplegable></MenuDesplegable>
-    </>
+    </Datos>
 
   )
 }
