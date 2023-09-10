@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet,Button,Image} from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Zocial'
+import ListaDeComandos from './ListaDeComandos'
 
 const HomeScreen = ({navigation}) => {
 
@@ -24,13 +25,8 @@ const HomeScreen = ({navigation}) => {
         </View>
       </View>
 
-
-      <Button
-        title="Go to coman data"
-        onPress={() => {
-          navigation.navigate('ComanData')
-        }}
-      />
+    {/* Lista de Comandos */}
+      <ListaDeComandos navigation={navigation}></ListaDeComandos>
     </View>
   )
 }

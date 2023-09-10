@@ -46,7 +46,7 @@ const style = StyleSheet.create({
     width: '10%', 
     height: 200, 
     position: 'absolute', 
-    top:200
+    top:200,
   }
 });
 export default MenuDesplegable;
