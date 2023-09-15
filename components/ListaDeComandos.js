@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import BDComandos from './BDComandos';
 import React from 'react';
+import BotonAd from './BotonAd'
 
 export default function ListaDeComandos({navigation}) {
 
@@ -32,15 +33,7 @@ export default function ListaDeComandos({navigation}) {
     <SafeAreaView style={styles.contenedor}>
       <ScrollView style={styles.scrollContenedor}>
         {ListComand}
-        <Text>
-          Y eso es todo lo que necesitas saber sobre el método Array.map(). La
-          mayoría de las veces, solo utilizarás el argumento del element dentro
-          de la función callback, ignorando el resto. Eso es lo que suelo hacer
-          en mis proyectos diarios Y eso es todo lo que necesitas saber sobre el
-          método Array.map(). La mayoría de las veces, solo utilizarás el
-          argumento del element dentro de la función callback, ignorando el
-          resto. Eso es lo que suelo hacer en mis proyectos diarios :):)
-        </Text>
+        <BotonAd></BotonAd>
       </ScrollView>
     </SafeAreaView>
   );

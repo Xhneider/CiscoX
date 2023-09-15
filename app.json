@@ -1,4 +1,7 @@
 {
   "name": "ciscoX",
-  "displayName": "ciscoX"
+  "displayName": "ciscoX",
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-2911247948401525~7846204653"
+  }
 }
