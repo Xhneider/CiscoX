@@ -18,7 +18,7 @@ export default switch_config = [
         "concepto": "El modo Configuración Global es un nivel más profundo de configuración en un switch Cisco. Para acceder a este modo, se utiliza el comando 'configure terminal'. En este modo, los usuarios pueden realizar cambios en la configuración global del dispositivo, como configurar interfaces y ajustar parámetros de red."
     },
     {
-        "titulo": "Ir al modo de configuración de puertos (desde el modo de configuración global)",
+        "titulo": "Ir al modo de configuración de puertos \n(desde configuración global)",
         "pasos": "1. En el modo Configuración Global, usar el comando 'interface' seguido del nombre del puerto o VLAN a configurar.\n2. Una vez dentro del modo de configuración de interfaz, ingresar los comandos necesarios para configurar ese puerto o VLAN específico.",
         "comando": "Switch(config)# interface [nombre_puerto_o_VLAN]",
         "concepto": "El modo de configuración de puertos permite a los administradores de red configurar parámetros específicos de un puerto en un switch Cisco. Para acceder a este modo desde el modo Configuración Global, se utiliza el comando 'interface' seguido del nombre del puerto o VLAN que se desea configurar. En este modo, se pueden ajustar opciones individuales para ese puerto o VLAN."

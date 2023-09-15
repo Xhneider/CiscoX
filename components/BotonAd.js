@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Text, View} from 'react-native';
-import {
-  InterstitialAd,
-  AdEventType,
-} from 'react-native-google-mobile-ads';
+import {TouchableWithoutFeedback, Text, View, StyleSheet} from 'react-native';
+import {InterstitialAd, AdEventType} from 'react-native-google-mobile-ads';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default function BotonAd() {
   const [loaded, setLoaded] = useState(false);
@@ -12,7 +10,9 @@ export default function BotonAd() {
 
   useEffect(() => {
     // cambiar a hacer el apk
-    const interstitialAd = InterstitialAd.createForAdRequest('ca-app-pub-3940256099942544/1033173712');
+    const interstitialAd = InterstitialAd.createForAdRequest(
+      'ca-app-pub-3940256099942544/1033173712',
+    );
 
     const loadInterstitial = async () => {
       try {
@@ -28,7 +28,6 @@ export default function BotonAd() {
       // El anuncio se ha cerrado, por lo que podemos cargarlo nuevamente.
       loadInterstitial();
       setGracias(true);
-
     });
     loadInterstitial();
 
@@ -37,20 +36,17 @@ export default function BotonAd() {
 
   return (
     <>
-      {loaded ? (
-        <Button
-          title="Invitame a un cafe"
-          onPress={() => {
-            if (interstitial) {
-              interstitial.show();
-            }
-          }}
-        />
-      ) : (
-        <View>
-          <Text>Cargando anuncio</Text>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          if (interstitial) {
+            interstitial.show();
+          }
+        }}>
+        <View style={style.btonAd}>
+        <Icon name={'coffee'} size={20} />
+          <Text style={{fontFamily:'MPLUSRounded1c-Black',paddingLeft:10}}>Invitame A Un Café</Text>
         </View>
-      )}
+      </TouchableWithoutFeedback>
 
       {Gracias ? (
         <View>
@@ -58,9 +54,22 @@ export default function BotonAd() {
         </View>
       ) : (
         <View>
-          <Text></Text>
         </View>
       )}
     </>
   );
 }
+
+const style=StyleSheet.create({
+  btonAd:{
+    height:40,
+    width:200,
+    backgroundColor:'#2271b3',
+    borderRadius:7,
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    flexDirection:'row',
+    marginBottom:10
+  }
+})
