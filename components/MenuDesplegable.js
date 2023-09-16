@@ -11,7 +11,7 @@ import { Contexto } from './ContextoApp';
 
 const MenuDesplegable = () => {
 
-  {/* uso del contexto para controlar el hidden del menu */}
+  {/* uso del contexto para controlar el hidden de los items del menu */}
   const {hidden}=useContext(Contexto)
   const {setHidden}=useContext(Contexto)
   const [largo, setLargo] = useState(new Animated.Value(10));

@@ -3,15 +3,19 @@ import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import { Contexto } from './ContextoApp';
+import { Dispositivo } from './ContextoApp';
 
 const ItemsMenu = () => {
   const { hidden } = useContext(Contexto);
+  const {setDispositivo} = useContext(Dispositivo)
 
   const router = () => {
+    setDispositivo(1)
     console.log('press router');
   };
 
   const Switch = () => {
+    setDispositivo(0)
     console.log('press switch');
   };
 

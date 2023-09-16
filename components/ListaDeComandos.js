@@ -4,16 +4,18 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   TouchableWithoutFeedback,
 } from 'react-native';
 import BDComandos from './BDComandos';
-import React from 'react';
+import React,{useContext} from 'react';
 import BotonAd from './BotonAd';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { Dispositivo } from './ContextoApp';
 
 export default function ListaDeComandos({navigation}) {
-  const ListComand = BDComandos.map((item, key) => {
+  const {dispositivo} = useContext(Dispositivo)
+
+  const ListComand = BDComandos[dispositivo].map((item, key) => {
     return (
       <TouchableWithoutFeedback
         key={key}
