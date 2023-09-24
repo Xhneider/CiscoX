@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function BotonAd() {
   const [interstitial, setInterstitial] = useState(null);
-  const [gracias, setGracias] = useState(false);
 
   useEffect(() => {
     const interstitialAd = InterstitialAd.createForAdRequest(

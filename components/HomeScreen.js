@@ -1,10 +1,14 @@
 import { View, Text, StyleSheet,Button,Image} from 'react-native'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Icon from 'react-native-vector-icons/Zocial'
 import ListaDeComandos from './ListaDeComandos'
+import { Dispositivo } from './ContextoApp'
+
 
 const HomeScreen = ({navigation}) => {
-
+  const {dispositivo} = useContext(Dispositivo)
+  
+  
   return (
 
     <View  style={style.backGround}>
@@ -21,7 +25,7 @@ const HomeScreen = ({navigation}) => {
       <View style={style.contenedorItem}>
         <Text style={style.text}>Scripts De Comandos De Cisco Paket Tracer</Text>
         <View style={style.contenDispositivo}>
-          <Text style={style.textDispositivo}>Dispositivo: Switch</Text>
+          <Text style={style.textDispositivo}>Dispositivo: {dispositivo==0?'Switch':'Router'}</Text>
         </View>
       </View>
 
