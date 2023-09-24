@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import Icon from 'react-native-vector-icons/Zocial'
 import ListaDeComandos from './ListaDeComandos'
 import { Dispositivo } from './ContextoApp'
+import BuscadorInput from './BuscadorInput'
 
 
 const HomeScreen = ({navigation}) => {
@@ -24,9 +25,15 @@ const HomeScreen = ({navigation}) => {
     {/*Texto de pantalla de inicio*/}
       <View style={style.contenedorItem}>
         <Text style={style.text}>Scripts De Comandos De Cisco Paket Tracer</Text>
+
+      <View style={style.contenedorDispoInput}>
         <View style={style.contenDispositivo}>
           <Text style={style.textDispositivo}>Dispositivo: {dispositivo==0?'Switch':'Router'}</Text>
         </View>
+
+        <BuscadorInput/>
+      </View>
+        
       </View>
 
     {/* Lista de Comandos */}
@@ -75,12 +82,18 @@ const style=StyleSheet.create({
       alignItems:'center',
       justifyContent:'center',
       borderRadius:7,
-      marginTop:15
     },
     textDispositivo:{
       color:'black',
       color:'#0B666A',
       fontFamily:'MPLUSRounded1c-Bold'
+  },
+  contenedorDispoInput:{
+    width:'100%',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+
   }
 })
 export default HomeScreen
