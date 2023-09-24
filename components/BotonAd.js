@@ -54,12 +54,6 @@ export default function BotonAd() {
           </Text>
         </View>
       </TouchableWithoutFeedback>
-
-      {gracias ? (
-        <View>
-          <Text>Muchas Gracias</Text>
-        </View>
-      ) : null}
     </>
   );
 }
