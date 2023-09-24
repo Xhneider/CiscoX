@@ -15,17 +15,17 @@ import {Buscador, Dispositivo} from './ContextoApp';
 export default function ListaDeComandos({navigation}) {
   const {dispositivo} = useContext(Dispositivo);
   const {valor} = useContext(Buscador);
-  
+
   const ComandosFiltrados = BDComandos[dispositivo].filter(item =>
     item.titulo.toLowerCase().includes(valor.toLowerCase()),
   );
 
-  const ListComand = ComandosFiltrados.map((item, key) => {
+  const ListComand = ComandosFiltrados.map((item) => {
     return (
       <TouchableWithoutFeedback
-        key={key}
+        key={item.id}
         onPress={() => {
-          navigation.navigate('ComanData', {id: key});
+          navigation.navigate('ComanData', {id: item.id});
         }}>
         <View style={styles.itemConten}>
           <Text style={{fontFamily: 'MPLUSRounded1c-Black'}}>
