@@ -3,8 +3,9 @@ import React from 'react'
 
 const BuscadorInput = () => {
   return (
-    <View>
+    <View style={styles.contenInput}>
       <TextInput
+        maxLength={30}
         style={styles.Input}
         placeholder='Buscar'
       ></TextInput>
@@ -15,7 +16,10 @@ const BuscadorInput = () => {
 const styles= StyleSheet.create({
     Input:{
         width: 200,
-        borderBottomColor:'black'
+    },
+    contenInput:{
+        borderBottomColor: '#61dafb',
+        borderBottomWidth: 1,
     }
 })
 
