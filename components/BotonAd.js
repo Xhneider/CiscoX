@@ -22,7 +22,6 @@ export default function BotonAd() {
 
     interstitialAd.addAdEventListener(AdEventType.CLOSED, () => {
       loadInterstitial();
-      setGracias(true);
     });
 
     loadInterstitial();
