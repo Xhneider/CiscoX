@@ -7,15 +7,20 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import BDComandos from './BDComandos';
-import React,{useContext} from 'react';
+import React, {useContext} from 'react';
 import BotonAd from './BotonAd';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { Dispositivo } from './ContextoApp';
+import {Buscador, Dispositivo} from './ContextoApp';
 
 export default function ListaDeComandos({navigation}) {
-  const {dispositivo} = useContext(Dispositivo)
+  const {dispositivo} = useContext(Dispositivo);
+  const {valor} = useContext(Buscador);
+  
+  const ComandosFiltrados = BDComandos[dispositivo].filter(item =>
+    item.titulo.toLowerCase().includes(valor.toLowerCase()),
+  );
 
-  const ListComand = BDComandos[dispositivo].map((item, key) => {
+  const ListComand = ComandosFiltrados.map((item, key) => {
     return (
       <TouchableWithoutFeedback
         key={key}
@@ -23,7 +28,9 @@ export default function ListaDeComandos({navigation}) {
           navigation.navigate('ComanData', {id: key});
         }}>
         <View style={styles.itemConten}>
-          <Text style={{fontFamily: 'MPLUSRounded1c-Black'}}>{item.titulo}</Text>
+          <Text style={{fontFamily: 'MPLUSRounded1c-Black'}}>
+            {item.titulo}
+          </Text>
           <Icon name={'right'} size={20} style={styles.flechaICon} />
         </View>
       </TouchableWithoutFeedback>
