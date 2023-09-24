@@ -4,15 +4,16 @@ import Icon from 'react-native-vector-icons/Zocial'
 import ListaDeComandos from './ListaDeComandos'
 import { Dispositivo } from './ContextoApp'
 import BuscadorInput from './BuscadorInput'
-
+import MenuDesplegable from './MenuDesplegable';
 
 const HomeScreen = ({navigation}) => {
   const {dispositivo} = useContext(Dispositivo)
   
   
   return (
-
+    
     <View  style={style.backGround}>
+          
 
       <Icon name='github' size={30} style={style.githIcon}/>
 
@@ -38,6 +39,7 @@ const HomeScreen = ({navigation}) => {
 
     {/* Lista de Comandos */}
       <ListaDeComandos navigation={navigation}></ListaDeComandos>
+      <MenuDesplegable></MenuDesplegable>
     </View>
   )
 }
