@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './components/HomeScreen';
 import ComanDataScreen from './components/ComanDataScreen';
-import MenuDesplegable from './components/MenuDesplegable';
 import { Datos } from './components/ContextoApp.js'
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
         <Stack.Screen name="ComanData" component={ComanDataScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    <MenuDesplegable></MenuDesplegable>
     </Datos>
 
   )
