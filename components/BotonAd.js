@@ -45,12 +45,15 @@ export default function BotonAd() {
   return (
     <>
       <TouchableWithoutFeedback onPress={showInterstitial}>
+        <>
         <View style={style.btonAd}>
           <Icon name={'coffee'} size={20} />
           <Text style={{ fontFamily: 'MPLUSRounded1c-Black', paddingLeft: 10 }}>
             Invítame A Un Café
           </Text>
         </View>
+        <Text>Alpha 1.0</Text>
+        </>
       </TouchableWithoutFeedback>
     </>
   );
