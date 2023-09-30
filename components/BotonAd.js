@@ -8,7 +8,7 @@ export default function BotonAd() {
 
   useEffect(() => {
     const interstitialAd = InterstitialAd.createForAdRequest(
-      'ca-app-pub-3940256099942544/1033173712', // Reemplaza con tu ID de anuncio
+      'ca-app-pub-2911247948401525~7846204653', 
     );
 
     const loadInterstitial = async () => {
